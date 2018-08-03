@@ -1,17 +1,27 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <VueTerminal
+            class=""
+            :lines="lines"
+            :add-styled-markup=true
+    ></VueTerminal>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      lines: [
+        {type: 'input', content: '$ welcome to vue-terminal Demo!'},
+        {type: 'input', content: '$ just add lines and they will be animated when yuo set the type prop to "input"'},
+        {type: 'input', content: '$ want to simulate some Progress? just add a line with the type of "progress"'},
+        {type: 'progress', progressBarCharacter: '*'},
+        {type: 'progress', progressBarCharacter: '#'}
+      ]
+    }
   }
 }
 </script>
