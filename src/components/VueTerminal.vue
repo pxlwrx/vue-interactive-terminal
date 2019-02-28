@@ -15,7 +15,7 @@
     </div>
     <section v-else
             id="terminal"
-            class="terminal"
+            class="terminal-window"
             ref="terminal"
             :style="styles"
     >
@@ -185,6 +185,9 @@ export default {
     .typing {
         display: inline-block !important;
         white-space: pre;
+    }
+    .terminal {
+      min-height: 500px;
     }
     .terminal-window {
         text-align: left;
